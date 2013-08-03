@@ -84,6 +84,20 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
         self.server.queue.put(payload)
 
+    def do_GET(self):
+
+        try:
+            lines = int(self.path.rstrip('/').split('/')[:-1])
+        except:
+            lines = 100
+
+        self.send_header('Content-Type', 'text/plain')
+        self.end_headers()
+
+        lines = subprocess.check_output(['tail', '-n', str(lines), 'log'])
+
+        self.send_response(200, lines)
+
 if __name__ == '__main__':
     queue = Queue.Queue()
     runner = Runner(queue)
