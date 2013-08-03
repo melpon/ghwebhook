@@ -23,7 +23,7 @@ def run(handler_class, queue):
 class Config(object):
     def __init__(self, line):
         elems = line.split(' ', 3)
-        self.user = elems[0]
+        self.gituser = elems[0]
         self.repo = elems[1]
         self.ref = elems[2]
         self.command = elems[3]
@@ -47,10 +47,10 @@ class Runner(object):
         payload = self.queue.get()
         logger.info('get payload: {}'.format(payload))
 
-        user = payload['repository']['owner']['name']
+        gituser = payload['repository']['owner']['name']
         repo = payload['repository']['name']
         ref = payload['ref']
-        logger.info('user:{}, repo:{}, ref:{}'.format(user, repo, ref))
+        logger.info('gituser:{}, repo:{}, ref:{}'.format(gituser, repo, ref))
 
         logger.info('load config')
         lines = open('config').readlines()
@@ -58,13 +58,15 @@ class Runner(object):
 
         logger.info('find matched line')
         for config in configs:
-            if (config.user == user and
+            if (config.gituser == gituser and
                 config.repo == repo and
                 config.ref == ref):
                 logger.info('found config')
-                logger.info('run command: {}'.format(config.command))
+
+                command = 'sudo {command}'.format(command=config.command)
+                logger.info('run command: {}'.format(command))
                 try:
-                    output = subprocess.check_output(config.command, shell=True, stderr=subprocess.STDOUT)
+                    output = subprocess.check_output(command, stderr=subprocess.STDOUT)
                     logger.info('run command is success: {}'.format(output))
                 except subprocess.CalledProcessError, e:
                     logger.error('run command is failed: {}, {}'.format(e.returncode, e.output))

@@ -1,1 +1,2 @@
 melpon wandbox refs/heads/master /home/wandbox/wandbox/ghwebhook.sh
+melpon ghwebhook refs/heads/master /home/ghwebhook/ghwebhook/ghwebhook.sh
