@@ -5,7 +5,7 @@ ghwebhook
 
 .. _`Post-Receive Hooks`: https://help.github.com/articles/post-receive-hooks
 
-各コマンドは sudo で実行されるので、外部からの情報をコマンドに利用してはならない。
+各コマンドは root ユーザで実行されるので、外部からの情報をコマンドに利用してはならない。
 
 設定
 --------
@@ -17,4 +17,5 @@ ghwebhook
 左から順に、githubユーザ名、リポジトリ名、ブランチ名、コマンドになっている。
 
 Post-Receive Hooks によってサーバの URL が叩かれたとき、
-githubユーザ名、リポジトリ名、ブランチ名に完全に一致した場合にコマンドが実行される。
+更新のあったgithubユーザ名、リポジトリ名、ブランチ名が
+設定した各データに完全に一致した場合にコマンドが実行される。
