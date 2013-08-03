@@ -15,7 +15,7 @@ handler.setFormatter(logging.Formatter(FORMAT))
 logger.addHandler(handler)
 
 def run(handler_class, queue):
-    server_address = ('', 8000)
+    server_address = ('', 20267)
     httpd = BaseHTTPServer.HTTPServer(server_address, handler_class)
     httpd.queue = queue
     httpd.serve_forever()
