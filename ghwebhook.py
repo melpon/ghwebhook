@@ -66,7 +66,7 @@ class Runner(object):
                 command = 'sudo {command}'.format(command=config.command)
                 logger.info('run command: {}'.format(command))
                 try:
-                    output = subprocess.check_output(command, stderr=subprocess.STDOUT)
+                    output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
                     logger.info('run command is success: {}'.format(output))
                 except subprocess.CalledProcessError, e:
                     logger.error('run command is failed: {}, {}'.format(e.returncode, e.output))
