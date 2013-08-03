@@ -5,7 +5,9 @@ ghwebhook
 
 .. _`Post-Receive Hooks`: https://help.github.com/articles/post-receive-hooks
 
-各コマンドは root ユーザで実行されるので、外部からの情報をコマンドに利用してはならない。
+各コマンドは root ユーザで実行されるため、外部からの情報をコマンドに利用してはならない。
+
+また、このサーバはパスワード無しで sudo できる権限が必要である。
 
 設定
 --------
