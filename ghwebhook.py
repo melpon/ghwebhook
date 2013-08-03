@@ -85,18 +85,25 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         self.server.queue.put(payload)
 
     def do_GET(self):
+        logger.info('GET: {}'.format(self.path))
 
         try:
             lines = int(self.path.rstrip('/').split('/')[:-1])
         except:
             lines = 100
 
+        logger.info('lines: {}'.format(lines))
+
         self.send_header('Content-Type', 'text/plain')
         self.end_headers()
 
-        lines = subprocess.check_output(['tail', '-n', str(lines), 'log'])
+        logger.info('start subprocess tail -n {} log'.format(lines))
 
-        self.send_response(200, lines)
+        text = subprocess.check_output(['tail', '-n', str(lines), 'log'])
+
+        logger.info('end subprocess')
+
+        self.send_response(200, text)
 
 if __name__ == '__main__':
     queue = Queue.Queue()
