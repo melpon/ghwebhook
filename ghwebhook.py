@@ -94,6 +94,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
         logger.info('lines: {}'.format(lines))
 
+        self.send_response(200)
         self.send_header('Content-Type', 'text/plain')
         self.end_headers()
 
@@ -103,7 +104,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
         logger.info('end subprocess')
 
-        self.send_response(200, text)
+        self.wfile.write(text)
 
 if __name__ == '__main__':
     queue = Queue.Queue()
