@@ -88,7 +88,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         logger.info('GET: {}'.format(self.path))
 
         try:
-            lines = int(self.path.rstrip('/').split('/')[:-1])
+            lines = int(self.path.rstrip('/').split('/')[-1])
         except:
             lines = 100
 
