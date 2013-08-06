@@ -1,2 +1,3 @@
 melpon wandbox refs/heads/master /home/wandbox/wandbox/ghwebhook.sh
 melpon ghwebhook refs/heads/master /home/ghwebhook/ghwebhook/ghwebhook.sh
+bolero-MURAKAMI Sprout refs/heads/master /bin/sh -c 'cd /usr/local/sprout && git pull'
