@@ -93,6 +93,9 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
             lines = 100
 
         logger.info('lines: {}'.format(lines))
+        if lines > 10000:
+            lines = 10000
+            logger.info('shrink lines to: {}'.format(lines))
 
         self.send_response(200)
         self.send_header('Content-Type', 'text/plain')
