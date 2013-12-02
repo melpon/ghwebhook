@@ -2,5 +2,5 @@ melpon wandbox refs/heads/master /home/wandbox/wandbox/ghwebhook.sh
 melpon ghwebhook refs/heads/master /home/ghwebhook/ghwebhook/ghwebhook.sh
 melpon publication refs/heads/master /home/publication/publication/ghwebhook.sh
 melpon mpidl-web refs/heads/master /home/mpidl-web/mpidl-web/ghwebhook.sh
-melpon melpon-org refs/heads/master /home/melpon-org/melpon-org/ghwebhook.sh
+melpon melpon.org refs/heads/master /home/melpon-org/melpon-org/ghwebhook.sh
 bolero-MURAKAMI Sprout refs/heads/master /bin/sh -c 'cd /usr/local/sprout && git pull'
