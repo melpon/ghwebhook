@@ -47,7 +47,7 @@ class Runner(object):
         payload = self.queue.get()
         logger.info('get payload: {}'.format(payload))
 
-        gituser = payload['repository']['owner']['name']
+        gituser = payload['repository']['owner']['login']
         repo = payload['repository']['name']
         ref = payload['ref']
         logger.info('gituser:{}, repo:{}, ref:{}'.format(gituser, repo, ref))
