@@ -5,6 +5,6 @@ melpon melpon.org refs/heads/master /home/melpon-org/melpon-org/ghwebhook.sh
 cpprefjp site refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh
 cpprefjp crsearch refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh --all
 cpprefjp site_generator refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh --all
-cpprefjp kunai refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh --all
+cpprefjp kunai refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh
 boostjp site refs/heads/master /home/melpon/site_generator/boostjp/ghwebhook.sh
 bolero-MURAKAMI Sprout refs/heads/master /bin/sh -c 'cd /usr/local/sprout && git pull'
