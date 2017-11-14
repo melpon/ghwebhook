@@ -2,8 +2,8 @@ melpon wandbox refs/heads/master /home/wandbox/wandbox/ghwebhook.sh
 melpon ghwebhook refs/heads/master /home/ghwebhook/ghwebhook/ghwebhook.sh
 melpon mpidl-web refs/heads/master /home/mpidl-web/mpidl-web/ghwebhook.sh
 melpon melpon.org refs/heads/master /home/melpon-org/melpon-org/ghwebhook.sh
-cpprefjp site refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh
+cpprefjp site refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh --all --concurrency=4
 cpprefjp site_generator refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh --all --concurrency=4
 cpprefjp kunai refs/heads/master /home/melpon/site_generator/cpprefjp/ghwebhook.sh --all --concurrency=4
-boostjp site refs/heads/master /home/melpon/site_generator/boostjp/ghwebhook.sh
+boostjp site refs/heads/master /home/melpon/site_generator/boostjp/ghwebhook.sh --all
 bolero-MURAKAMI Sprout refs/heads/master /bin/sh -c 'cd /usr/local/sprout && git pull'
