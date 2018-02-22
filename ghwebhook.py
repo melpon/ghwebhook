@@ -90,7 +90,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         try:
             lines = int(self.path.rstrip('/').split('/')[-1])
         except:
-            lines = 100
+            lines = 400
 
         logger.info('lines: {}'.format(lines))
         if lines > 10000:
